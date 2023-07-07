@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Groceries</title>
+    <script src="grosery.ts"></script>
+</head>
+<body>
+    <h1>Grocery list</h1>
+    <ul id="groceryList"></ul>
+
+    <script>
+        let groceries = JSON.parse(localStorage.getItem('groceries'));
+
+        let groceryList = document.getElementById('groceryList');
+
+        for (let grocery of groceries) {
+            let li = document.createElement('li');
+            li.textContent = `${grocery.name}: ${grocery.quantity}`;
+            groceryList.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>
